@@ -25,3 +25,13 @@ services:
       - back
       - front
     restart: always
+
+  mongodb:
+    container_name: mongodb
+    image: mongo:latest
+    ports:
+      - "$MONGO_PORT:$MONGO_PORT"
+    env_file: .env
+    volumes:
+      - mongo-data:/data/db
+    restart: always

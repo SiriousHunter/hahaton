@@ -1,0 +1,33 @@
+{
+  "root": true,
+  "parserOptions": {"ecmaVersion": "latest"},
+  "extends": [
+    "eslint:recommended",
+    "eslint-config-airbnb"
+  ],
+  "env": {
+    "es6": true,
+    "commonjs": true,
+    "node": true
+  },
+  "rules": {
+    "implicit-arrow-linebreak": 0,
+    "linebreak-style": 0,
+    "default-param-last": 0,
+    "no-underscore-dangle": 0,
+    "no-mixed-operators": 0,
+    "no-unused-expressions": 0,
+    "no-unsafe-optional-chaining": 0,
+    "no-restricted-syntax": 0,
+    "no-await-in-loop": 0,
+    "arrow-parens": ["error", "as-needed"],
+    "indent": ["error", 4],
+    "quotes": ["error", "single"],
+    "object-curly-spacing": ["off", "always"],
+    "new-parens": ["error"],
+    "no-lonely-if": ["error"],
+    "no-trailing-spaces": ["error"],
+    "no-unneeded-ternary": ["error"],
+    "no-whitespace-before-property": ["error"]
+  }
+}
