@@ -3,8 +3,8 @@ const mongoose = require('../../plugins/mongooseConnector');
 const games = require('./games');
 
 
-const MONGO_USERNAME = process.env.MONGO_INITDB_ROOT_USERNAME
-const MONGO_PASSWORD = process.env.MONGO_INITDB_ROOT_PASSWORD
+const MONGO_USERNAME = process.env.MONGO_USER
+const MONGO_PASSWORD = process.env.MONGO_PASSWORD
 const MONGO_DATABASE = process.env.MONGO_INITDB_DATABASE
 const MONGO_HOST = process.env.MONGO_HOST
 const MONGO_PORT = process.env.MONGO_PORT

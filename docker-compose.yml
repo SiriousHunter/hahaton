@@ -1,37 +1,44 @@
 version: '3.8'
 
+volumes:
+  mongo-data-hack:
+
 services:
   back:
-    container_name: back
+    container_name: back-hack
+    env_file: .env
     build:
       context: ./back
     restart: always
 
-  front:
-    container_name: front
-    build:
-      context: ./front
-    depends_on:
-      - back
-    restart: always
+#  front:
+#    container_name: front
+#    build:
+#      context: ./front
+#    depends_on:
+#      - back
+#    restart: always
 
   nginx:
-    container_name: nginx
+    container_name: nginx-hack
+    env_file: .env
     build:
       context: ./nginx
     ports:
       - "80:80"
-    depends_on:
-      - back
-      - front
+#    depends_on:
+#      - back
+#      - front
     restart: always
 
   mongodb:
-    container_name: mongodb
+    container_name: mongodb-hack
     image: mongo:latest
     ports:
       - "$MONGO_PORT:$MONGO_PORT"
     env_file: .env
     volumes:
-      - mongo-data:/data/db
+      - mongo-data-hack:/data/db
+      - ./mongo/scripts/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
     restart: always
+

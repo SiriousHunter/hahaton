@@ -15,7 +15,7 @@ class Game {
 
         const filter = {
             ...title && { title: { $regex: new RegExp(`${title}`) } },
-            ...lang && { lang },
+
             ...category && { category },
             ...enabled && { enabled },
         };
@@ -39,26 +39,24 @@ class Game {
             .exec();
     }
 
-    async getOne({id, url, enabled}, lang) {
+    async getOne({id, url, enabled}) {
         const filter = {
             ...id && {_id: id},
             ...url && {url},
-            ...lang && { lang },
             ...enabled && { enabled },
         };
-        return this.mongoose.Game
+        return this.mongoose.Games
             .findOne(filter)
             .exec();
     }
 
-    async count({title, lang, category}) {
+    async count({title, category}) {
         const filter = {
             ...title && { title: { $regex: new RegExp(`${title}`) } },
-            ...lang && { lang },
             ...category && { category },
         };
 
-        return this.mongoose.Game
+        return this.mongoose.Games
             .find(filter)
             .count()
             .exec();

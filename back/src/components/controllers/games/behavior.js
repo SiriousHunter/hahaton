@@ -6,13 +6,13 @@ class GamesControllerBehavior {
     }
 
     /**
-     * Get item info
+     * Get random game info
      * @param filter
      * @param lang
      * @returns {Promise<*>}
      */
-    async getRandomGame(filter, lang) {
-        // randomizer
+    async getRandomGame(filter) {
+        return await this.Game.getOne(filter)
     }
 }
 
