@@ -1,0 +1,47 @@
+.couponWrapper {
+  width: 550px;
+  height: 180px;
+  border-radius: 5px;
+  box-shadow: $color-grey-500;
+  background-color: #eee;
+  padding: 10px 10px;
+  display: flex;
+  gap: .5rem;
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 40px;
+    left: -20px;
+    border-radius: 40px;
+    z-index: 1;
+    top: 70px;
+    background-color: $color-grey-900;
+    width: 40px;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    height: 40px;
+    right: -20px;
+    border-radius: 40px;
+    z-index: 1;
+    top: 70px;
+    background-color: $color-grey-900;
+    width: 40px;
+  }
+}
+
+.vertical {
+  border-left: 5px dotted $color-black;
+  height: 100%;
+}
+
+.couponBonus{
+  position: relative;
+}
+
+.winText {
+  font-size: 2rem;
+}
