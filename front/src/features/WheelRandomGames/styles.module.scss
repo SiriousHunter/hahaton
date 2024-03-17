@@ -6,7 +6,7 @@
 }
 
 .title {
-  @include h3;
+ @include font-h3;
 }
 
 .button{
@@ -15,8 +15,6 @@
   background-color: $color-red;
 }
 
-
-
 .wheel{
   position: relative;
   display: grid;
@@ -24,7 +22,16 @@
   grid-template-areas: "spinner";
   width: var(--size);
   height: var(--size);
-  //transform: rotate(calc(var(--rotate, 25) * 1deg));
   border-radius: 50%;
   box-shadow: inset 0 0 0 calc(var(--size) / 40) hsl(0deg 0% 0% / 0.06);
+}
+
+.game {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  transform-origin: center right;
+  user-select: none;
 }

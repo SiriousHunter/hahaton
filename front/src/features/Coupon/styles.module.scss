@@ -1,35 +1,35 @@
 .couponWrapper {
   position: relative;
-  width: 400px;
-  height: 180px;
+  height: 10rem;
+  min-width: 15rem;
   border-radius: 1rem;
   background-color: #FFCE19;
   padding: 1rem 2rem;
   display: flex;
-  gap: .5rem;
+  align-items: center;
 
   &::before {
     position: absolute;
     content: "";
-    height: 40px;
-    left: -2.5rem;
-    border-radius: 40px;
+    left: 0;
+    top: 50%;
     z-index: 1;
-    top: 70px;
+    @include size(3rem);
+    border-radius: 50%;
     background-color: $color-grey-900;
-    width: 40px;
+    transform: translate(-50%, -50%);
   }
 
   &::after {
     position: absolute;
     content: "";
-    height: 40px;
-    right: -2.5rem;
-    border-radius: 40px;
+    right: 0;
+    top: 50%;
     z-index: 1;
-    top: 70px;
+    @include size(3rem);
+    border-radius: 50%;
     background-color: $color-grey-900;
-    width: 40px;
+    transform: translate(50%, -50%);
   }
 }
 
@@ -42,6 +42,13 @@
 
   &:disabled {
     cursor: inherit;
+  }
+
+  & > img {
+    @include size(inherit);
+    object-fit: cover;
+    object-position: bottom;
+    user-select: none;
   }
 }
 

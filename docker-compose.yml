@@ -12,8 +12,11 @@ services:
 
   front:
     container_name: front-hack
+    env_file: .env
     build:
       context: ./front
+      args:
+        - VITE_BASE_IMG_URL=$VITE_BASE_IMG_URL
     depends_on:
       - back
     restart: always

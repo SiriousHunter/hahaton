@@ -1,15 +1,31 @@
-import { FC } from 'react'
-import { PortalWrapper } from '_components/PortalWrapper'
+import { Coupon } from '_features/Coupon'
+import { useRandomGames } from '_hooks/useRandomGames.ts'
+import styles from './styles.module.scss'
 
-type TModalRandom = {
-  isOpen: boolean
-}
-export const ModalRandom: FC<TModalRandom> = ({ isOpen }) => {
+export const ModalRandom = () => {
+  const { gamesConfig } = useRandomGames({ amount: 2 })
+
   return (
-    <PortalWrapper isOpen={isOpen}>
-      <div>Купоны</div>
+    <div className={styles.modalRandomGame}>
+      <div>
+        <p className={styles.subtitle}>Выберите купон</p>
 
-      <div>Рандом</div>
-    </PortalWrapper>
+        <ul className={styles.couponList}>
+          {gamesConfig.map((el) => (
+            <li key={el.id}>
+              <Coupon config={el} />
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <p className={styles.subtitle}>Выиграйте рандомую игру</p>
+
+        <div>
+
+        </div>
+      </div>
+    </div>
   )
 }

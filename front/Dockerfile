@@ -12,6 +12,10 @@ RUN npm install --production=false
 
 COPY --link . .
 
+ARG VITE_BASE_IMG_URL
+
+ENV VITE_BASE_IMG_URL=${VITE_BASE_IMG_URL}
+
 RUN npm run build
 RUN npm prune
 

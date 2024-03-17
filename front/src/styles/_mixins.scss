@@ -1,3 +1,21 @@
+@mixin media-width($width, $type: max) {
+  @if $type == max {
+    $width: $width - 1px;
+  }
+
+  @media only screen and (#{$type}-width: $width) {
+    @content;
+  }
+}
+
+@mixin has-hover {
+  @media (hover: hover) {
+    &:hover {
+      @content
+    }
+  }
+}
+
 @mixin size($width, $height: $width) {
   width: $width;
   height: $height;
@@ -19,13 +37,18 @@
   transition: $transition;
 }
 
-@mixin h2 {
+@mixin font-h2 {
   font-size: 3.2rem;
   line-height: 3.6rem;
 }
 
-@mixin h3 {
+@mixin font-h3 {
   font-size: 2.4rem;
   line-height: 2.8rem;
+}
+
+@mixin font-btn {
+  font-size: 1.8rem;
+  line-height: 2.2rem;
 }
 

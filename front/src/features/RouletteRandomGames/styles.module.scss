@@ -1,0 +1,51 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.roulette {
+  position: relative;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  gap: 1rem;
+  background-color: $color-grey-300;
+
+  &::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 20px solid transparent;
+    border-bottom: 20px solid $color-red;
+  }
+}
+
+.rouletteGameItem {
+  @include size(10rem);
+
+  & > img {
+    @include size(100%);
+    object-fit: cover;
+  }
+
+  @include media-width(1280) {
+    @include size(6rem);
+  }
+}
+
+.modalBtn {
+  min-width: 15rem;
+  padding: 1.2rem 2rem;
+  background-color: $color-red;
+  border-radius: 1rem;
+  @include font-btn;
+
+  @include media-width(1280) {
+    min-width: 10rem;
+    padding: .4rem 1.2rem;
+  }
+}

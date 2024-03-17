@@ -10,24 +10,10 @@
 }
 
 .sectionTitle{
-  @include h2;
+  @include font-h2;
   margin-bottom: 2rem;
 }
 
 .subtitle {
-  @include h3;
-}
-
-.modalWrapperRandomGames{
-  position: absolute;
-  z-index: 100;
-  top: 50%;
-  right: 50%;
-  transform: translate(50%, -50%) scale(.7);
-  padding: 1.6rem 2.4rem;
-  background-color: $color-grey-900;
-  border-radius: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
+ @include font-h3;
 }

@@ -4,13 +4,13 @@
   gap: 2.4rem;
 }
 
-.sectionTitle{
-  @include h2;
+.sectionTitle {
+  @include font-h2;
   margin-bottom: 2rem;
 }
 
 .subtitle {
-  @include h3;
+  @include font-h3;
 }
 
 .integrationVariant {
@@ -24,7 +24,7 @@
   }
 }
 
-.randomModalWrapper{
+.randomModalWrapper {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -34,44 +34,38 @@
   background: green;
 }
 
-.couponBlock{
+.couponBlock {
   position: absolute;
-  top: 17rem;
-  right: 11rem;
+  top: 22.5%;
+  right: 8.5%;
   z-index: 2;
-  background-color: $color-yellow;
-  width: 22.5rem;
-  height: 10.5rem;
+  @include size(23rem, 10rem);
 
-  &::before {
-    position: absolute;
-    content: "";
-    top: 40px;
-    @include size(3rem);
-    left: -1.5rem;
-    border-radius: 50%;
-    z-index: 1;
-    background-color: $color-common-bg;
+  @include media-width(1440) {
+    @include size(22rem, 9.5rem);
   }
 
-  &::after {
-    position: absolute;
-    content: "";
-    right: -1.5rem;
-    top: 40px;
-    @include size(3rem);
-    border-radius: 50%;
-    z-index: 1;
-    background-color: $color-common-bg;
+  @include media-width(1280) {
+    @include size(17rem, 7rem);
   }
 }
 
-.spinerRandomGame{
+.spinerRandomGame {
   position: absolute;
-  bottom: 30%;
-  right: 11rem;
+  bottom: 27%;
+  right: 10rem;
   z-index: 2;
   background-color: $color-violet;
-  width: 22.5rem;
-  height: 25rem;
+  border-radius: 1rem;
+  @include size(24rem, 26rem);
+
+  @include media-width(1440) {
+    bottom: 28%;
+    @include size(22rem, 23.5rem);
+  }
+
+  @include media-width(1280) {
+    right: 7.5rem;
+    @include size(17.6rem, 16rem);
+  }
 }

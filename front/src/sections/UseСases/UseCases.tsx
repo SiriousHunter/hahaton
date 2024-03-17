@@ -1,22 +1,24 @@
 import { SectionWrapper } from '_components/SectionWrapper'
-import { ModalCoupons } from '_features/Coupon/ModalCoupons/ModalCoupons.tsx'
+import { ModalCoupons } from '_features/ModalCoupons/ModalCoupons.tsx'
 import siteWithGame from '../../../public/siteWithGame.png'
 import styles from './styles.module.scss'
 import { WheelRandomGames } from '_features/WheelRandomGames'
+import { RouletteRandomGames } from '_features/RouletteRandomGames'
+import { ModalWrapper } from '_components/ModalWrapeer'
 
 export const UseCases = () => {
   return (
     <SectionWrapper>
-      <h2 className={styles.sectionTitle}>Варианты испольщования</h2>
+      <h2 className={styles.sectionTitle}>Варианты использования</h2>
 
       <div className={styles.caseItem}>
         <h3 className={styles.subtitle}>Колесо</h3>
 
         <img src={siteWithGame} alt="" />
 
-        <div className={styles.modalWrapperRandomGames}>
+        <ModalWrapper title="Колесо с рандомными играми" isOpen>
           <WheelRandomGames />
-        </div>
+        </ModalWrapper>
       </div>
 
       <div className={styles.caseItem}>
@@ -24,7 +26,9 @@ export const UseCases = () => {
 
         <img src={siteWithGame} alt="" />
 
-        {/*    RandomGameRoulette*/}
+        <ModalWrapper title="Roulette Random Games" isOpen>
+          <RouletteRandomGames />
+        </ModalWrapper>
       </div>
 
       <div className={styles.caseItem}>
@@ -32,7 +36,9 @@ export const UseCases = () => {
 
         <img src={siteWithGame} alt="" />
 
-        <ModalCoupons isOpen />
+        <ModalWrapper isOpen title="Забери свой купон">
+          <ModalCoupons />
+        </ModalWrapper>
       </div>
     </SectionWrapper>
   )

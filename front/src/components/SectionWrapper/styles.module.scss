@@ -1,12 +1,25 @@
 .sectionWrapper {
-  max-width: 192rem;
+  width: 144rem;
   padding: 0 10rem;
-  width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
 
   & + .sectionWrapper {
     margin-top: 3.2rem;
+  }
+
+  @include media-width(1440) {
+    width: 128rem;
+    padding: 0 5rem;
+  }
+
+  @include media-width(1280) {
+    width: 102.4rem;
+  }
+
+  @include media-width(1024) {
+    width: 76.8rem;
   }
 }
