@@ -1,0 +1,12 @@
+{
+  "mockCoupons": [
+    {
+      "label": "FreeSpin",
+      "id": "test"
+    },
+    {
+      "label": "FreeBet",
+      "id": "test"
+    }
+  ]
+}

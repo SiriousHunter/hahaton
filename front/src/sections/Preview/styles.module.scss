@@ -1,0 +1,37 @@
+.header {
+  width: 100%;
+
+  & > img {
+    object-fit: contain;
+    width: inherit;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.btn {
+  padding: 2rem;
+  color: black;
+  background-color: $color-yellow;
+  font-size: 2rem;
+  border-radius: 1rem;
+}
+
+.featureTitle {
+  font-size: 4.6rem;
+}
+
+.group {
+  font-size: 3.2rem;
+}
+
+.groupList {
+  font-size: 2.4rem;
+}
+
+

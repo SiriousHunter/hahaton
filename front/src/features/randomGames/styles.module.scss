@@ -1,0 +1,12 @@
+.spinRandomGames {
+  padding: 1rem;
+  background-color: $color-grey-500;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.modalTitle {
+  font-size: 1.8rem;
+}

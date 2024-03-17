@@ -1,10 +1,10 @@
 .couponWrapper {
-  width: 550px;
+  position: relative;
+  width: 400px;
   height: 180px;
-  border-radius: 5px;
-  box-shadow: $color-grey-500;
-  background-color: #eee;
-  padding: 10px 10px;
+  border-radius: 1rem;
+  background-color: #FFCE19;
+  padding: 1rem 2rem;
   display: flex;
   gap: .5rem;
 
@@ -12,7 +12,7 @@
     position: absolute;
     content: "";
     height: 40px;
-    left: -20px;
+    left: -2.5rem;
     border-radius: 40px;
     z-index: 1;
     top: 70px;
@@ -24,7 +24,7 @@
     position: absolute;
     content: "";
     height: 40px;
-    right: -20px;
+    right: -2.5rem;
     border-radius: 40px;
     z-index: 1;
     top: 70px;
@@ -33,13 +33,26 @@
   }
 }
 
-.vertical {
-  border-left: 5px dotted $color-black;
-  height: 100%;
+.couponBonus {
+  @include size(100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:disabled {
+    cursor: inherit;
+  }
 }
 
-.couponBonus{
-  position: relative;
+.couponScratch {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.couponScratched {
+  display: none;
 }
 
 .winText {
