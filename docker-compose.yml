@@ -2,7 +2,6 @@ version: '3.8'
 
 volumes:
   mongo-data-hack:
-
 services:
   back:
     container_name: back-hack
@@ -30,6 +29,9 @@ services:
       - back
       - front
     restart: always
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/data:/var/data
 
   mongodb:
     container_name: mongodb-hack
