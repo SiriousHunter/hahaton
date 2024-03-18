@@ -1,36 +1,37 @@
-import styles from './styles.module.scss'
 import { useRef, useState } from 'react'
-// import {spinertia} from '_features/WheelRandomGames/utils'
-//
-// const AMOUNT_GAMES = mockGames.length
+import { useRandomGames } from '_hooks/useRandomGames.ts'
+import styles from './styles.module.scss'
 
 export const WheelRandomGames = () => {
   const wheelRef = useRef(null)
-  // const [rotation, setRotation] = useState(0)
-  // const [currentSlice, setCurrentSlice] = useState(0)
-  //
-  // const prizeSlice = 360 / AMOUNT_GAMES
-  // const prizeOffset = Math.floor(180 / AMOUNT_GAMES)
+  const { gamesConfig } = useRandomGames({ amount: 9 })
+  const [rotation, setRotation] = useState(0)
 
-  const onSpinWheel = () => {
-    // const selectedItem = Math.floor(Math.random() * AMOUNT_GAMES
+  const prizeSlice = 360 / gamesConfig.length
+  const prizeOffset = Math.floor(180 / gamesConfig.length)
+
+  const onSpin = () => {
+    setRotation((prev) => prev + Math.ceil(Math.random() * 3600))
   }
 
   return (
     <div className={styles.wrapper}>
-      {/*<ul className={styles.wheel} ref={wheelRef} style={{transform: `rotate(${rotation}deg)`}}>*/}
-      {/*    {mockGames.map(({img}, index) => {*/}
-      {/*        // const rotation = prizeSlice * index * -1 - prizeOffset*/}
+      <ul ref={wheelRef} className={styles.wheel} style={{ transform: `rotate(${rotation}deg)` }}>
+        {gamesConfig.map(({ gameName, img }, index) => {
+          const rotate = prizeSlice * index * -1 - prizeOffset
+          return (
+            <li
+              key={gameName}
+              style={{ transform: `rotate(${rotate}deg)` }}
+              className={styles.game}
+            >
+              <img src={`${import.meta.env.VITE_BASE_IMG_URL}/${img}.jpg`} alt={gameName} />
+            </li>
+          )
+        })}
+      </ul>
 
-      {/*        return (*/}
-      {/*            <li className={styles.game} style={{transform: `rotate(${rotation}deg)`}} key={index}>*/}
-      {/*                <img src={`http://localhost/images/${img}.jpg`} alt=""/>*/}
-      {/*            </li>*/}
-      {/*        )*/}
-      {/*    })}*/}
-      {/*</ul>*/}
-
-      <button className={styles.button} onClick={onSpinWheel}>
+      <button onClick={onSpin} className={styles.btn}>
         Spin
       </button>
     </div>

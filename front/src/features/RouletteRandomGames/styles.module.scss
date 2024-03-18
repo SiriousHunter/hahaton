@@ -5,8 +5,21 @@
   gap: 1.6rem;
 }
 
-.roulette {
+.roller {
   position: relative;
+}
+
+.rollerHolder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  @i
+}
+
+.roulette {
+
   padding: 1rem;
   border-radius: 1rem;
   display: flex;

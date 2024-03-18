@@ -1,5 +1,11 @@
 import { SectionWrapper } from '_components/SectionWrapper'
+import { AppList } from '_components/AppList'
 import styles from './styles.module.scss'
+
+const taskList = [
+  'Реализовать удобный, легко интегрируемый, и простой в использовании интерфейс для выдачи игроку случайной игры на основе алгоритма рекомендаций',
+  'Реализовать рекомендательный алгоритм, который учитывает схожесть игр и предпочтения игрока'
+]
 
 export const Preview = () => (
   <SectionWrapper>
@@ -8,12 +14,7 @@ export const Preview = () => (
 
       <h2 className={styles.group}>Команда: Бага_на_Год</h2>
 
-      <ul className={styles.groupList}>
-        <p>Состав:</p>
-        <li>Синявский Вадим</li>
-        <li>Бобков Виталий</li>
-        <li>Шереметьев Сергей</li>
-      </ul>
+      <AppList title="Задачи:" config={taskList} />
     </div>
   </SectionWrapper>
 )

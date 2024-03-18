@@ -11,6 +11,16 @@ export const UseCases = () => {
     <SectionWrapper>
       <h2 className={styles.sectionTitle}>Варианты использования</h2>
 
+      <ul className={styles.useCaseList}>
+        <p>Критерии:</p>
+        <li>
+          - Универсальный компоненты, которые легко изменяются под разные задачи (размещение на
+          разных страницах, различные события)
+        </li>
+        <li> - Возможность расширять функционал (добавлять бонусные механики)</li>
+        <li> - Интуитивно понятный интерфейс, позволяющий в пару кликов получать случайную игру</li>
+      </ul>
+
       <div className={styles.caseItem}>
         <h3 className={styles.subtitle}>Колесо</h3>
 

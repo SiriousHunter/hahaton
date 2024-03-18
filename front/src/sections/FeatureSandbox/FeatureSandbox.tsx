@@ -1,37 +1,36 @@
-import { useState } from 'react'
 import { SectionWrapper } from '_components/SectionWrapper'
+import { AppList } from '_components/AppList/AppList.tsx'
 
-import { AppButton } from '_components/AppButton'
-import { ModalOneCoupon } from '_features/ModalOneCoupon'
-import styles from './styles.module.scss'
+const content = {
+  peoplePreference: ['Страна', 'Возраст', 'Девайс с которого чаще всего играет'],
+  gameConfig: [
+    'Максимальная ставка',
+    'Провайдер',
+    'Наличие бонусной игры',
+    'Наличие риск игры (удвоение выигрыша в мини игре)',
+    'RTP',
+    'Бонусные механики для игры от казино (турниры/кешбек/фсп/левелы и тд)',
+    'Популярность среди игроков',
+    'Популярность среди игроков схожей группы',
+    'Наличие истории игр в слоты схожей группы',
+    'Волатильность/дисперсия'
+  ]
+}
 
 export const FeatureSandbox = () => {
-  // const [isOpenRandomSpinGames, setIsOpenRandomSpinGames] = useState(false)
-  const [isOpenCouponModal, setIsOpenCouponModal] = useState(false)
-  // const onOpenRandomSpinGames = () => {
-  //   setIsOpenRandomSpinGames(true)
-  // }
-  const onOpenCouponModal = () => {
-    setIsOpenCouponModal(true)
-  }
-
   return (
     <SectionWrapper>
-      <h2>Примеры использования</h2>
+      <h2>Алгоритм подбора</h2>
 
-      <div>
-        Тут примеры реализации
-        {/*<button onClick={onOpenRandomSpinGames}>Получить рандомную игру</button>*/}
-        <AppButton onClick={onOpenCouponModal}>Открыть купон</AppButton>
-      </div>
+      <AppList
+        title="Подбор игр на основе предпочтений игрока / схожих с ним групп игроков:"
+        config={content.peoplePreference}
+      />
 
-      <div className={styles.sandboxSettings}>
-        <h3>Настройки</h3>
-        <div>Тут будет форма с настройками</div>
-      </div>
-
-      {/*{isOpenRandomSpinGames && <SpinGames isOpen={isOpenRandomSpinGames} />}*/}
-      {isOpenCouponModal && <ModalOneCoupon isOpen={isOpenCouponModal} />}
+      <AppList
+        title="Подбор игр на основе схожих игр по различным метрикам:"
+        config={content.gameConfig}
+      />
     </SectionWrapper>
   )
 }

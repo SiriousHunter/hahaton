@@ -5,6 +5,7 @@ import siteImgReplaceBlock from '../../../public/siteImgReplaceBlock.png'
 import styles from './styles.module.scss'
 import { ModalRandom } from '_features/ModalRandom/ModalRandom.tsx'
 import { ModalWrapper } from '_components/ModalWrapeer'
+import { WheelRandomGames } from '_features/WheelRandomGames'
 
 const mockCoupon = {
   gameName: 'HotPatrick',
@@ -38,7 +39,9 @@ export const IntegrationOptions = () => {
             <Coupon config={mockCoupon} />
           </div>
 
-          <div className={styles.spinerRandomGame}>{/*  GameSpiner*/}</div>
+          <div className={styles.spinerRandomGame}>
+            <WheelRandomGames />
+          </div>
         </div>
       </div>
     </SectionWrapper>

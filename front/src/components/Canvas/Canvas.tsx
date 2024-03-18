@@ -39,5 +39,5 @@ export const Canvas = (props: any) => {
     }
   }, [draw, context])
 
-  return <canvas ref={canvasRef} style={{ width, height }} {...rest} />
+  return <canvas ref={canvasRef} width={width} height={height} {...rest} />
 }
