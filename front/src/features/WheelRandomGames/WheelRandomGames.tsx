@@ -16,20 +16,22 @@ export const WheelRandomGames = () => {
 
   return (
     <div className={styles.wrapper}>
-      <ul ref={wheelRef} className={styles.wheel} style={{ transform: `rotate(${rotation}deg)` }}>
-        {gamesConfig.map(({ gameName, img }, index) => {
-          const rotate = prizeSlice * index * -1 - prizeOffset
-          return (
-            <li
-              key={gameName}
-              style={{ transform: `rotate(${rotate}deg)` }}
-              className={styles.game}
-            >
-              <img src={`${import.meta.env.VITE_BASE_IMG_URL}/${img}.jpg`} alt={gameName} />
-            </li>
-          )
-        })}
-      </ul>
+      <div className={styles.wheelContainer}>
+        <ul ref={wheelRef} className={styles.wheel} style={{ transform: `rotate(${rotation}deg)` }}>
+          {gamesConfig.map(({ gameName, img }, index) => {
+            const rotate = prizeSlice * index * -1 - prizeOffset
+            return (
+              <li
+                key={gameName}
+                style={{ transform: `rotate(${rotate}deg)` }}
+                className={styles.game}
+              >
+                <img src={`${import.meta.env.VITE_BASE_IMG_URL}/${img}.jpg`} alt={gameName} />
+              </li>
+            )
+          })}
+        </ul>
+      </div>
 
       <button onClick={onSpin} className={styles.btn}>
         Spin

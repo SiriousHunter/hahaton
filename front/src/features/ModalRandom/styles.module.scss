@@ -1,10 +1,12 @@
 .modalRandomGame {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 20rem;
   gap: 1.6rem;
 }
 
 .subtitle {
   font-size: 1.6rem;
+  margin-bottom: 1.6rem;
 }
 
 .couponList{

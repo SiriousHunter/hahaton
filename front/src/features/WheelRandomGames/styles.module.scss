@@ -1,8 +1,11 @@
 .wrapper {
+  margin: 0 auto;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.6rem;
+  max-width: 25rem;
 }
 
 .title {
@@ -10,14 +13,32 @@
 }
 
 .wheel {
+  flex: 1;
   position: relative;
   top: 0;
   left: 0;
-  @include size(20rem);
+  @include size(100%);
   background-color: #333;
   border-radius: 50%;
   overflow: hidden;
   transition: transform 4s ease-in-out;
+  opacity: 0.8;
+}
+
+.wheelContainer {
+  aspect-ratio: 1 / 1;
+  @include size(100%);
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: '';
+    bottom: -1rem;
+    right: 50%;
+    border: 20px solid transparent;
+    border-bottom: 20px solid $color-red;
+    transform: translateX(50%);
+  }
 }
 
 .game {
@@ -29,9 +50,17 @@
   transform-origin: bottom right;
   clip-path: polygon(0 0, 85% 0, 100% 100%, 0 85%);
   user-select: none;
+
+  & > img {
+    transform: rotate(45deg);
+    position: relative;
+    bottom: 14rem;
+    right: -3rem;
+  }
 }
 
 .btn {
+  flex: 0;
   padding: 0.8rem 2.4rem;
   border-radius: 1.2rem;
   background-color: $color-red;

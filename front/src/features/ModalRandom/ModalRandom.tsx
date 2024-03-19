@@ -1,9 +1,10 @@
 import { Coupon } from '_features/Coupon'
 import { useRandomGames } from '_hooks/useRandomGames.ts'
 import styles from './styles.module.scss'
+import { WheelRandomGames } from '_features/WheelRandomGames'
 
 export const ModalRandom = () => {
-  const { gamesConfig } = useRandomGames({ amount: 2 })
+  const { gamesConfig } = useRandomGames({ amount: 3 })
 
   return (
     <div className={styles.modalRandomGame}>
@@ -22,9 +23,7 @@ export const ModalRandom = () => {
       <div>
         <p className={styles.subtitle}>Выиграйте рандомую игру</p>
 
-        <div>
-
-        </div>
+        <WheelRandomGames />
       </div>
     </div>
   )
